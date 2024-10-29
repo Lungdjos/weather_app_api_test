@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { loginUser, registerUser } from './api'; // Adjust the path as necessary
+import { loginUser, registerUser } from '../api/api'; // Adjust the path as necessary
 
 export const AuthContext = createContext();
 
@@ -16,9 +16,9 @@ const AuthProvider = ({ children }) => {
         }
     };
 
-    const register = async (username, password) => {
+    const register = async (firstName, lastName, country, email, password) => {
         try {
-            await registerUser(email, password);
+            await registerUser(firstName, lastName, country, email, password);
             // Optionally auto-login after registration
             await login(email, password);
         } catch (err) {

@@ -3,8 +3,8 @@ import axios from 'axios';
 const API_URL = 'http://localhost:8080/api'; // Adjust according to your backend URL
 
 // Function to register a new user
-export const registerUser = async (email, password) => {
-    const response = await axios.post(`${API_URL}/register`, {firstName, lastName, email, password, country });
+export const registerUser = async (firstName, lastName, email, password, country) => {
+    const response = await axios.post(`${API_URL}/register`, { firstName, lastName, email, password, country });
     return response.data;
 };
 
